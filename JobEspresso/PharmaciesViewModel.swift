@@ -33,6 +33,19 @@ class PharmaciesViewModel
 
     func sumMaskByCountry(features: [PharmaciesResponse.Feature])
     {
-        
+        for currentFeature in features
+        {
+            guard let country = currentFeature.pharmacies?.county,
+                  let numberOfMask = currentFeature.pharmacies?.maskAdult else { break }
+            
+            if pharmaciesResult[country] == nil
+            {
+                pharmaciesResult[country] = numberOfMask
+            }
+            else
+            {
+                pharmaciesResult[country]! += numberOfMask
+            }
+        }
     }
 }
