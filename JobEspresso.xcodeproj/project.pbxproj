@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D154ED6243915F90069D31E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D154ED5243915F80069D31E /* Model.swift */; };
+		0D154ED9243918BB0069D31E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D154ED5243915F80069D31E /* Model.swift */; };
 		0D1AC7232438FA990055C580 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1AC7222438FA990055C580 /* AppDelegate.swift */; };
 		0D1AC7252438FA990055C580 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1AC7242438FA990055C580 /* ViewController.swift */; };
 		0D1AC7282438FA990055C580 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D1AC7262438FA990055C580 /* Main.storyboard */; };
@@ -34,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D154ED5243915F80069D31E /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		0D1AC71F2438FA990055C580 /* JobEspresso.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobEspresso.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D1AC7222438FA990055C580 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D1AC7242438FA990055C580 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +106,7 @@
 				0D1AC7292438FA9B0055C580 /* Assets.xcassets */,
 				0D1AC72B2438FA9B0055C580 /* LaunchScreen.storyboard */,
 				0D1AC72E2438FA9B0055C580 /* Info.plist */,
+				0D154ED5243915F80069D31E /* Model.swift */,
 			);
 			path = JobEspresso;
 			sourceTree = "<group>";
@@ -256,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D154ED6243915F90069D31E /* Model.swift in Sources */,
 				0D1AC7252438FA990055C580 /* ViewController.swift in Sources */,
 				0D1AC7232438FA990055C580 /* AppDelegate.swift in Sources */,
 			);
@@ -266,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D1AC7382438FA9B0055C580 /* JobEspressoTests.swift in Sources */,
+				0D154ED9243918BB0069D31E /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
