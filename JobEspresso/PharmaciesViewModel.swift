@@ -16,7 +16,19 @@ class PharmaciesViewModel
 
     func fetchPharmacies()
     {
-        
+        ApiManager.apiRequest(with: "https://raw.githubusercontent.com/kiang/pharmacies/master/json/points.json",
+                              objectType: PharmaciesResponse.self)
+        { (result) in
+            
+            switch result
+            {
+            case .success(let response):
+//                print(response)
+                print("finish")
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 
     func sumMaskByCountry(features: [PharmaciesResponse.Feature])
