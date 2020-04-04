@@ -10,7 +10,7 @@ import Foundation
 
 class PharmaciesViewModel
 {
-    var pharmacies: Dictionary<String,Int> = [:]
+    var pharmaciesResult: Dictionary<String,Int> = [:]
     var countrys: Array<String> = []
     var completionHandler: (() -> Void) = {}
 
@@ -19,7 +19,7 @@ class PharmaciesViewModel
         
     }
 
-    func sumMaskByCountry()
+    func sumMaskByCountry(features: [PharmaciesResponse.Feature])
     {
         
     }
