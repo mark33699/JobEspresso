@@ -8,25 +8,30 @@
 
 import Foundation
 
-// MARK: - Pharmacies
-struct Pharmacies: Codable {
-    let type: String?
-    let features: [Feature]?
-}
+typealias Pharmacy = PharmaciesResponse.Feature.Pharmacy
 
-// MARK: - Feature
-struct Feature: Codable {
-    let properties: Properties?
-}
-
-// MARK: - Properties
-struct Properties: Codable
+struct PharmaciesResponse: Codable
 {
-    let county: String?
-    let maskAdult: Int?
-    
-    enum CodingKeys: String, CodingKey {
-        case maskAdult = "mask_adult"
-        case county
+    let features: [Feature]?
+
+    struct Feature: Codable
+    {
+        let pharmacies: Pharmacy?
+        
+        enum CodingKeys: String, CodingKey {
+            case pharmacies = "properties"
+        }
+
+        struct Pharmacy: Codable
+        {
+            let county: String?
+            let maskAdult: Int?
+            
+            enum CodingKeys: String, CodingKey {
+                case maskAdult = "mask_adult"
+                case county
+            }
+        }
     }
 }
+
