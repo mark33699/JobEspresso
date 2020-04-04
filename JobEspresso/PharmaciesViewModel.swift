@@ -55,6 +55,8 @@ class PharmaciesViewModel
         }
         
         countrys = Array(pharmaciesResult.keys)
+        let locale = Locale(identifier: "zh_TW")
+        countrys = countrys.sorted(by: { $0.compare($1, locale: locale) == .orderedAscending})
 
         DispatchQueue.main.async
         {
