@@ -13,17 +13,34 @@ let cellIdentifier = "cell"
 class PharmaciesViewController: UITableViewController
 {
     let viewModel = PharmaciesViewModel()
-
+    let activityView = UIActivityIndicatorView()
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
+        layoutUI()
+        bindingViewModel()
+    }
+
+    private func layoutUI()
+    {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        tableView.tableFooterView = UIView()
         
+        view.addSubview(activityView)
+        activityView.center = view.center
+        activityView.color = .black
+        activityView.startAnimating()
+    }
+    
+    private func bindingViewModel()
+    {
         viewModel.fetchPharmacies()
         viewModel.completionHandler =
         {
             self.tableView.reloadData()
+            self.activityView.isHidden = true
         }
     }
     

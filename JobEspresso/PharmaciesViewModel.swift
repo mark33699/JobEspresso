@@ -27,8 +27,11 @@ class PharmaciesViewModel
                 {
                     self.sumMaskByCountry(features: features)
                 }
-                print("finish")
             case .failure(let error):
+                DispatchQueue.main.async
+                {
+                    self.completionHandler()
+                }
                 print(error.localizedDescription)
             }
         }
