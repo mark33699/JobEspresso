@@ -8,6 +8,8 @@
 
 import UIKit
 
+let cellIdentifier = "cell"
+
 class PharmaciesViewController: UITableViewController
 {
     let viewModel = PharmaciesViewModel()
@@ -15,6 +17,9 @@ class PharmaciesViewController: UITableViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        
         viewModel.fetchPharmacies()
         viewModel.completionHandler =
         {
@@ -22,11 +27,13 @@ class PharmaciesViewController: UITableViewController
         }
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        0
-    }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { viewModel.countrys.count }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        UITableViewCell()
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        let country = viewModel.countrys[indexPath.row]
+        cell.textLabel?.text = "\(indexPath.row + 1).\(country): \(viewModel.pharmaciesResult[country] ?? 0)"
+        return cell
     }
 }

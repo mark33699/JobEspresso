@@ -23,7 +23,10 @@ class PharmaciesViewModel
             switch result
             {
             case .success(let response):
-//                print(response)
+                if let features = response.features
+                {
+                    self.sumMaskByCountry(features: features)
+                }
                 print("finish")
             case .failure(let error):
                 print(error.localizedDescription)
@@ -46,6 +49,13 @@ class PharmaciesViewModel
             {
                 pharmaciesResult[country]! += numberOfMask
             }
+        }
+        
+        countrys = Array(pharmaciesResult.keys)
+
+        DispatchQueue.main.async
+        {
+            self.completionHandler()
         }
     }
 }
